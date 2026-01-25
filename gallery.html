@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | DigiFlash</title>
+    <style>
+        body { font-family: sans-serif; background: #f8fafc; padding: 20px; text-align: center; }
+        nav { text-align: left; margin-bottom: 20px; }
+        nav a { text-decoration: none; color: #2563eb; font-weight: bold; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; padding: 10px; }
+        .gallery-item { background: #ddd; border-radius: 10px; overflow: hidden; height: 200px; position: relative; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+        .caption { position: absolute; bottom: 0; background: rgba(0,0,0,0.6); color: white; width: 100%; padding: 5px; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+    <nav><a href="index.html">← Back to Home</a></nav>
+    <h1>Memories of DigiFlash</h1>
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/400x300" alt="Event 1">
+            <div class="caption">Inauguration Ceremony 2025</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/400x300" alt="Event 2">
+            <div class="caption">Annual Tech Quiz Winners</div>
+        </div>
+    </div>
+</body>
+</html>
