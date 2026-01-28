@@ -5,29 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Updates | DigiFlash</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; padding: 20px; background: #f8fafc; color: #334155; }
-        nav { margin-bottom: 20px; }
-        nav a { text-decoration: none; color: #2563eb; font-weight: bold; }
-        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; }
-        .tag { background: #dbeafe; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-size: 0.8rem; }
-        .btn { display: inline-block; background: #2563eb; color: white; padding: 8px 16px; border-radius: 5px; text-decoration: none; margin-top: 10px; }
+        :root { --primary: #2563eb; --dark: #1e293b; --light: #f8fafc; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--light); color: var(--dark); }
+        nav { background: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-weight: bold; color: var(--primary); text-decoration: none; font-size: 1.4rem; }
+        .nav-links { display: flex; gap: 12px; }
+        .nav-links a { text-decoration: none; color: var(--dark); font-size: 0.85rem; font-weight: 500; }
+        .content { max-width: 800px; margin: 40px auto; padding: 20px; }
+        .update-card { background: white; border-left: 5px solid var(--primary); padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        .quiz-btn { background: var(--primary); color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; display: inline-block; margin-top: 10px; }
+        @media (max-width: 768px) { .nav-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; } .nav-links a { font-size: 0.7rem; } }
     </style>
 </head>
 <body>
-    <nav><a href="index.html">← Back to Home</a></nav>
-    <h1>DigiFlash Daily Updates</h1>
-
-    <div class="card">
-        <span class="tag">Quiz</span>
-        <h2>Weekly Tech Quiz #1</h2>
-        <p>Test your skills! The top 3 scorers will be featured on the association notice board.</p>
-        <a href="https://forms.google.com" class="btn">Take Quiz</a>
-    </div>
-
-    <div class="card">
-        <span class="tag">Notice</span>
-        <h2>Association Meeting</h2>
-        <p>Mandatory meeting for all members this Wednesday at 3:00 PM in the Seminar Hall.</p>
+    <nav>
+        <a href="index.html" class="logo">DIGIFLASH</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="updates.html">Updates</a>
+            <a href="events.html">Events</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="members.html">Members</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+    <div class="content">
+        <h1>Daily Updates</h1>
+        <div class="update-card">
+            <h3>Weekly Tech Quiz</h3>
+            <p>Participation is open for the "Web Dev Challenge". Top scores will get e-certificates.</p>
+            <a href="YOUR_GOOGLE_FORM_LINK" class="quiz-btn">Start Quiz</a>
+        </div>
     </div>
 </body>
 </html>
