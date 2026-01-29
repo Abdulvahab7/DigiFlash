@@ -5,21 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DigiFlash | Home</title>
     <style>
-        :root { --primary: #2563eb; --dark: #1e293b; --light: #f8fafc; }
+        :root { --primary: #2563eb; --dark: #1e293b; --light: #f8fafc; --accent: #f59e0b; }
         body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--light); color: var(--dark); line-height: 1.6; }
+        
+        /* Navigation */
         nav { background: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
         .logo { font-weight: bold; color: var(--primary); text-decoration: none; font-size: 1.4rem; }
-        .nav-links { display: flex; gap: 12px; }
-        .nav-links a { text-decoration: none; color: var(--dark); font-size: 0.85rem; font-weight: 500; transition: 0.3s; }
+        .nav-links { display: flex; gap: 15px; }
+        .nav-links a { text-decoration: none; color: var(--dark); font-size: 0.85rem; font-weight: 600; transition: 0.3s; }
         .nav-links a:hover { color: var(--primary); }
-        .hero { text-align: center; padding: 80px 20px; background: white; border-bottom: 1px solid #e2e8f0; }
-        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
-        .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 4px solid var(--primary); text-align: center; }
-        .btn { display: inline-block; background: var(--primary); color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; margin-top: 15px; }
-        @media (max-width: 768px) { .nav-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; } .nav-links a { font-size: 0.7rem; } }
+
+        /* Hero Section */
+        .hero { text-align: center; padding: 100px 20px; background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); color: white; }
+        .hero h1 { font-size: 3rem; margin: 0; }
+        .hero p { font-size: 1.2rem; opacity: 0.9; }
+
+        .container { max-width: 1000px; margin: -50px auto 50px; padding: 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        
+        /* Highlight Cards */
+        .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-top: 5px solid var(--primary); transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        
+        .quiz-card { border-top-color: var(--accent); }
+        .badge { background: var(--accent); color: white; padding: 4px 10px; border-radius: 20px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; display: inline-block; margin-bottom: 10px; }
+        
+        h2 { margin-top: 10px; color: var(--dark); }
+        .btn { display: inline-block; background: var(--primary); color: white; padding: 12px 25px; border-radius: 6px; text-decoration: none; font-weight: 600; margin-top: 15px; }
+        .btn-quiz { background: var(--accent); }
+
+        @media (max-width: 768px) {
+            .container { grid-template-columns: 1fr; margin-top: 20px; }
+            .nav-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
+            .nav-links a { font-size: 0.7rem; }
+            .hero h1 { font-size: 2rem; }
+        }
     </style>
 </head>
 <body>
+
     <nav>
         <a href="index.html" class="logo">DIGIFLASH</a>
         <div class="nav-links">
@@ -32,16 +55,26 @@
             <a href="contact.html">Contact</a>
         </div>
     </nav>
+
     <header class="hero">
         <h1>Welcome to DigiFlash</h1>
-        <p>The digital gateway for all college association activities, team info, and event registrations.</p>
+        <p>Innovation • Technology • Community</p>
     </header>
+
     <div class="container">
+        <div class="card quiz-card">
+            <span class="badge">Live Now</span>
+            <h2>Weekly Technical Quiz</h2>
+            <p>Challenge yourself with our latest quiz and earn certificates. Check the updates section to begin!</p>
+            <a href="updates.html" class="btn btn-quiz">Take the Quiz</a>
+        </div>
+
         <div class="card">
-            <h2>📢 Daily Updates</h2>
-            <p>Stay informed with the latest announcements and take part in our weekly tech quizzes.</p>
-            <a href="updates.html" class="btn">View Updates</a>
+            <h2>Our Members</h2>
+            <p>Meet the dedicated team of 28 office bearers and our coordinator working behind DigiFlash.</p>
+            <a href="members.html" class="btn">View Team</a>
         </div>
     </div>
+
 </body>
 </html>
