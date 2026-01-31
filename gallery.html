@@ -65,12 +65,12 @@
     </div>
 
     <script>
-        function loadGallery(containerId, folderPath, photoCount, labelText) {
+        function loadGallery1(containerId, folderPath, photoCount, labelText) {
             const grid = document.getElementById(containerId);
             for (let i = 1; i <= photoCount; i++) {
                 const item = document.createElement('div');
                 item.className = 'gallery-item';
-                const imgSrc = `${folderPath}pic (${i}).jpg`;
+                const imgSrc = `${folderPath}pic (${i}).JPG`;
                 item.onclick = function() { openModal(imgSrc); };
                 item.innerHTML = `
                     <img src="${imgSrc}" loading="lazy" alt="${labelText}">
@@ -79,8 +79,22 @@
                 grid.appendChild(item);
             }
         }
-        loadGallery('inauguration-grid', 'images/Inauguration/', 25, 'Inauguration');
-        loadGallery('events-grid', 'images/Events/', 12, 'Event');
+          function loadGallery2(containerId, folderPath, photoCount, labelText) {
+            const grid = document.getElementById(containerId);
+            for (let i = 1; i <= photoCount; i++) {
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+                const imgSrc = `${folderPath}pic (${i}).jpeg`;
+                item.onclick = function() { openModal(imgSrc); };
+                item.innerHTML = `
+                    <img src="${imgSrc}" loading="lazy" alt="${labelText}">
+                    <div class="caption">${labelText} Photo ${i}</div>
+                `;
+                grid.appendChild(item);
+            }
+        }
+        loadGallery1('inauguration-grid', 'images/Inauguration/', 25, 'Inauguration');
+        loadGallery2('events-grid', 'images/Events/', 12, 'Event');
 
         function openModal(src) {
             document.getElementById('imageModal').style.display = 'flex';
