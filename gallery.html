@@ -33,9 +33,10 @@
         .gallery-item img { width: 100%; height: 220px; object-fit: cover; display: block; }
         .caption { padding: 12px; text-align: center; font-size: 0.85rem; font-weight: 600; color: #64748b; }
 
-        /* Modal */
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2000; justify-content: center; align-items: center; }
-        .modal img { max-width: 90%; max-height: 85%; border: 3px solid white; border-radius: 5px; }
+        /* Modal Viewer */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 2000; justify-content: center; align-items: center; }
+        .modal img { max-width: 90%; max-height: 85%; border-radius: 8px; box-shadow: 0 0 20px rgba(255,255,255,0.2); }
+        .close-btn { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; cursor: pointer; font-weight: bold; }
 
         @media (max-width: 768px) { .gallery-grid { grid-template-columns: 1fr 1fr; } }
     </style>
@@ -54,55 +55,63 @@
     </nav>
 
     <div class="container">
-        <div class="section-header"><h2>Inauguration Ceremony</h2></div>
+        <div class="section-header"><h2>✨ Inauguration Ceremony</h2></div>
         <div id="inauguration-grid" class="gallery-grid"></div>
 
-        <div class="section-header"><h2>Event Highlights</h2></div>
+        <div class="section-header"><h2>📸 Event Highlights</h2></div>
         <div id="events-grid" class="gallery-grid"></div>
     </div>
 
-    <div id="imageModal" class="modal" onclick="this.style.display='none'">
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close-btn">&times;</span>
         <img id="modalImg" src="">
     </div>
 
     <script>
-        function createGallery(containerId, folder, count, extension, label) {
+        function loadGallery(containerId, folderPath, count, ext, label) {
             const grid = document.getElementById(containerId);
+            
             for (let i = 1; i <= count; i++) {
                 const item = document.createElement('div');
                 item.className = 'gallery-item';
                 
-                // Matches your specific request: pic (1).JPG or pic (1).jpeg
-                const fileName = `pic (${i}).${extension}`;
-                const fullPath = `${folder}${fileName}`;
+                // Construct the path exactly as you stored them
+                const imgSrc = `${folderPath}pic (${i}).${ext}`;
+                
+                item.onclick = function() { openModal(imgSrc); };
 
                 item.innerHTML = `
-                    <img src="${fullPath}" loading="lazy" alt="${label}">
+                    <img src="${imgSrc}" loading="lazy" alt="${label}">
                     <div class="caption">${label} Photo ${i}</div>
                 `;
 
-                // Modal trigger
-                item.onclick = () => {
-                    document.getElementById('imageModal').style.display = 'flex';
-                    document.getElementById('modalImg').src = fullPath;
-                };
-
-                // Error handling: if path is wrong, try a fallback or hide the box
+                // If an image fails to load, hide that specific box
                 item.querySelector('img').onerror = function() {
-                    console.error("Missing file:", fullPath);
-                    this.closest('.gallery-item').style.display = 'none';
+                    console.error("Missing file: " + imgSrc);
+                    item.style.display = 'none';
                 };
 
                 grid.appendChild(item);
             }
         }
 
-        // --- CONFIGURATION ---
-        // 1. Inauguration folder uses .JPG (All Caps)
-        createGallery('inauguration-grid', 'images/Inauguration/', 25, 'JPG', 'Inauguration');
+        /** * APPLYING YOUR FILE TYPES:
+         * Inauguration: .JPG
+         * Events: .jpeg
+         */
+        loadGallery('inauguration-grid', 'images/Inauguration/', 25, 'JPG', 'Inauguration');
+        loadGallery('events-grid', 'images/Events/', 12, 'jpeg', 'Event');
 
-        // 2. Events folder uses .jpeg (Lowercase)
-        createGallery('events-grid', 'images/Events/', 12, 'jpeg', 'Event');
+        function openModal(src) {
+            document.getElementById('imageModal').style.display = 'flex';
+            document.getElementById('modalImg').src = src;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
     </script>
 </body>
 </html>
