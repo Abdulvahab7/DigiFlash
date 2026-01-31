@@ -3,36 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Office Bearers | DigiFlash</title>
+    <title>Gallery | DigiFlash</title>
     <style>
         :root { --primary: #2563eb; --dark: #1e293b; --light: #f8fafc; }
         body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--light); color: var(--dark); }
-        
-        /* Unified Navigation */
         nav { background: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
         .logo { font-weight: bold; color: var(--primary); text-decoration: none; font-size: 1.4rem; }
-        .nav-links { display: flex; gap: 12px; }
-        .nav-links a { text-decoration: none; color: var(--dark); font-size: 0.85rem; font-weight: 500; transition: 0.3s; }
-        .nav-links a:hover { color: var(--primary); }
+        .nav-links { display: flex; gap: 15px; }
+        .nav-links a { text-decoration: none; color: var(--dark); font-size: 0.9rem; font-weight: 600; }
 
-        header { text-align: center; padding: 40px 20px; background: white; border-bottom: 1px solid #eee; }
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        .section-header { margin: 40px 0 20px; border-left: 5px solid var(--primary); padding-left: 15px; }
         
-        /* Member Card Grid */
-        .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 25px; padding: 40px 5%; max-width: 1200px; margin: auto; }
-        .member-card { background: white; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #eef2f6; transition: transform 0.3s; }
-        .member-card:hover { transform: translateY(-5px); }
-        
-        .pic-frame { width: 100px; height: 100px; background: #f1f5f9; border-radius: 50%; margin: 0 auto 15px; overflow: hidden; border: 3px solid var(--primary); }
-        .pic-frame img { width: 100%; height: 100%; object-fit: cover; }
-        
-        h3 { margin: 10px 0 5px; font-size: 1rem; color: var(--dark); height: 2.4em; display: flex; align-items: center; justify-content: center; }
-        .designation { color: var(--primary); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-        .class-info { color: #64748b; font-size: 0.7rem; margin-top: 5px; }
-
-        @media (max-width: 768px) {
-            .nav-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
-            .nav-links a { font-size: 0.7rem; text-align: center; }
+        .gallery-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+            gap: 20px; 
+            margin-bottom: 50px;
         }
+
+        .gallery-item { 
+            background: white; border-radius: 12px; overflow: hidden; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08); cursor: pointer; 
+            transition: 0.3s; height: 260px;
+        }
+        .gallery-item img { width: 100%; height: 220px; object-fit: cover; display: block; }
+        .caption { padding: 8px; text-align: center; font-size: 0.8rem; color: #64748b; }
+
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2000; justify-content: center; align-items: center; }
+        .modal img { max-width: 90%; max-height: 85%; border: 3px solid white; }
     </style>
 </head>
 <body>
@@ -44,57 +43,65 @@
             <a href="updates.html">Updates</a>
             <a href="events.html">Events</a>
             <a href="gallery.html">Gallery</a>
-            <a href="members.html">Members</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
         </div>
     </nav>
 
-    <header>
-        <h1>Digiflash Office Bearers List</h1>
-        <p>Academic Year: 2025-2026</p>
-    </header>
+    <div class="container">
+        <div class="section-header"><h2>✨ Inauguration Ceremony</h2></div>
+        <div id="inauguration-grid" class="gallery-grid"></div>
 
-    <div class="team-grid">
-        <div class="member-card" style="grid-column: 1 / -1; max-width: 300px; margin: 0 auto 30px; border-color: #e11d48;">
-            <div class="pic-frame" style="border-color: #e11d48;"><img src="images/coordinator.jpeg"></div>
-            <h3>Prabhu K</h3>
-            <div class="designation" style="color: #e11d48;">Association Coordinator</div>
-            <div class="class-info">Dept. of Computer Science</div>
-        </div>
-
-        <div class="member-card"><div class="pic-frame"><img src="images/Arulnandhi.jpg"></div><h3>Arulnandhi.K</h3><div class="designation">President</div><div class="class-info">IV CSE-B</div></div>
-        <div class="member-card"><div class="pic-frame"><img src="images/Dharshan.jpeg"></div><h3>Dharshan.B</h3><div class="designation">Secretary</div><div class="class-info">IV CSE-A</div></div>
-        <div class="member-card"><div class="pic-frame"><img src="images/Santhosh.jpeg"></div><h3>Santhosh Gunal.K</h3><div class="designation">Treasurer</div><div class="class-info">III CSE-C</div></div>
-        <div class="member-card"><div class="pic-frame"><img src="images/Kabil.jpeg"></div><h3>Kabil.K</h3><div class="designation">Vice-President</div><div class="class-info">III CSE-A</div></div>
-        <div class="member-card"><div class="pic-frame"><img src="images/Deepsikashree.jpg"></div><h3>Deepsikashree.R</h3><div class="designation">Joint Secretary</div><div class="class-info">III CSE-B</div></div>
-        <div class="member-card"><div class="pic-frame"><img src="images/Samyuktha.jpg"></div><h3>Samyuktha.S</h3><div class="designation">Chief Editor & Head of Digitimes</div><div class="class-info">III CSE-B</div></div>
-        <div class="member-card"><div class="pic-frame"><img src="images/Sowmiya.jpg"></div><h3>Sowmiya.M</h3><div class="designation">Digitimes Incharge</div><div class="class-info">III CSE-B</div></div>
-        <div class="member-card"><div class="pic-frame"><img src="images/Kannan.jpg"></div><h3>Kannan.K</h3><div class="designation">Digitimes Incharge</div><div class="class-info">III CSE-C</div></div>
-        <div class="member-card"><div class="pic-frame"><img src="images/Santharam.jpg"></div><h3>Santharam.S</h3><div class="designation">Byte Bulletin Incharge</div><div class="class-info">III CSE-C</div></div>
-       
-
-        <div class="member-card"><div class="pic-frame"><img src="images/PavithraS.jpg"></div><h3>Pavithra.S</h3><div class="designation">Event Coordinator</div><div class="class-info">III CSE-A</div></div>
-        <div class="member-card"><div class="pic-frame"><img src="images/PavithraJ.jpg"></div><h3>Pavithra J</h3><div class="designation">Event Coordinator</div><div class="class-info">II CSE B</div></div>
-        <div class="member-card"><div class="pic-frame"><img src="images/Sanjay.jpg"></div><h3>Sanjay Kishore T</h3><div class="designation">Event Coordinator</div><div class="class-info">II CSE A</div></div>
-        <div class="member-card"><div class="pic-frame"><img src="images/Kavipriya.jpg"></div><h3>Kavipriya A</h3><div class="designation">Event Coordinator</div><div class="class-info">II CSE C</div></div>
-        <div class="member-card"><div class="pic-frame"><img src="images/Jena.jpg"></div><h3>Jena Shree T J</h3><div class="designation">Event Coordinator</div><div class="class-info">II CSE B</div></div>
-        <div class="member-card"><div class="pic-frame"><img src="images/Dinesh.jpg"></div><h3>Dinesh Babu S</h3><div class="designation">Event Coordinator</div><div class="class-info">II CSE C</div></div>
-        <div class="member-card"><div class="pic-frame"><img src="images/Gowshik.jpg"></div><h3>Gowshik Ram R</h3><div class="designation">Event Coordinator</div><div class="class-info">II CSE C</div></div>
-        <div class="member-card"><div class="pic-frame"><img src="images/Abhivashini.jpeg"></div><h3>Abhivashini.S</h3><div class="designation">Digitimes Magazine Team</div><div class="class-info">IV CSE-B</div></div>
-        <div class="member-card"><div class="pic-frame"><img src="images/Tarun.jpeg"></div><h3>Tarun</h3><div class="designation">Digitimes Magazine Team</div><div class="class-info">III CSE-A</div></div>
-        <div class="member-card"><div class="pic-frame"><img src="images/Raga.jpg"></div><h3>Raga Swetha D R</h3><div class="designation">Digitimes Magazine Team</div><div class="class-info">II CSE A</div></div>
-        <div class="member-card"><div class="pic-frame"><img src="images/Kamalika.jpg"></div><h3>Kamalika D</h3><div class="designation">Digitimes Magazine Team</div><div class="class-info">II CSE B</div></div>
-
-        <div class="member-card"><div class="pic-frame"><img src="images/Hari.jpg"></div><h3>HARI LOGESH B</h3><div class="designation">Digitimes Magazine Team</div><div class="class-info">II CSE B</div></div>
-        <div class="member-card"><div class="pic-frame"><img src="images/Vignesh.jpg"></div><h3>VIGNESH S</h3><div class="designation">Digitimes Magazine Team</div><div class="class-info">II CSE B</div></div>
-        <div class="member-card"><div class="pic-frame"><img src="images/Sriananth.jpg"></div><h3>Sriananth A</h3><div class="designation">Digitimes Magazine Team</div><div class="class-info">II CSE C</div></div>
-        <div class="member-card"><div class="pic-frame"><img src="images/Priyadharshini.jpg"></div><h3>Priyadharshini T</h3><div class="designation">Digitimes Magazine Team</div><div class="class-info">II CSE B</div></div>
-        <div class="member-card"><div class="pic-frame"><img src="images/Anderson.jpg"></div><h3>Anderson A</h3><div class="designation">Digitimes Magazine Team</div><div class="class-info">II CSE A</div></div>
-        <div class="member-card"><div class="pic-frame"><img src="images/Bhavinaya.jpg"></div><h3>Bhavinaya Shri.K.Y</h3><div class="designation">Documentation Incharge</div><div class="class-info">II CSE-A</div></div>
-        <div class="member-card"><div class="pic-frame"><img src="images/PavithraV.jpg"></div><h3>Pavithra V</h3><div class="designation">Website Coordinator</div><div class="class-info">II CSE-A</div></div>
-        <div class="member-card"><div class="pic-frame"><img src="images/Abdul.jpg"></div><h3>Abdul Vahab A</h3><div class="designation">Social Media Coordinator</div><div class="class-info">II CSE C</div></div>
+        <div class="section-header"><h2>📸 Event Highlights</h2></div>
+        <div id="events-grid" class="gallery-grid"></div>
     </div>
 
+    <div id="imageModal" class="modal" onclick="this.style.display='none'">
+        <img id="modalImg" src="">
+    </div>
+
+    <script>
+        function loadGallery(containerId, folder, count, ext, label) {
+            const grid = document.getElementById(containerId);
+            
+            for (let i = 1; i <= count; i++) {
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+                
+                // Construct path: pic (1).JPG
+                const path = `${folder}pic (${i}).${ext}`;
+                
+                item.innerHTML = `
+                    <img src="${path}" alt="${label}" loading="lazy">
+                    <div class="caption">${label} ${i}</div>
+                `;
+
+                const img = item.querySelector('img');
+
+                // SMART FALLBACK LOGIC
+                img.onerror = function() {
+                    if (this.src.includes('.JPG')) {
+                        // If .JPG failed, try .jpeg
+                        this.src = this.src.replace('.JPG', '.jpeg');
+                    } else if (this.src.includes('.jpeg')) {
+                        // If .jpeg failed, try .jpg
+                        this.src = this.src.replace('.jpeg', '.jpg');
+                    } else {
+                        // If all extensions fail, hide the box
+                        item.style.display = 'none';
+                    }
+                };
+
+                item.onclick = () => {
+                    document.getElementById('imageModal').style.display = 'flex';
+                    document.getElementById('modalImg').src = img.src;
+                };
+
+                grid.appendChild(item);
+            }
+        }
+
+        // Apply exactly what you have on GitHub
+        loadGallery('inauguration-grid', 'images/Inauguration/', 25, 'JPG', 'Inauguration');
+        loadGallery('events-grid', 'images/Events/', 12, 'jpeg', 'Event');
+    </script>
 </body>
 </html>
