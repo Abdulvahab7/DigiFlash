@@ -3,27 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Members | DigiFlash</title>
+    <title>Office Bearers | DigiFlash</title>
     <style>
         :root { --primary: #2563eb; --dark: #1e293b; --light: #f8fafc; }
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--light); }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--light); color: var(--dark); }
+        
         nav { background: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
-        .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .nav-logo img { height: 45px; }
-        .nav-logo span { font-weight: bold; color: var(--primary); font-size: 1.5rem; }
-        .nav-links a { text-decoration: none; color: var(--dark); margin-left: 20px; font-weight: 500; }
-        .container { max-width: 1000px; margin: 50px auto; padding: 0 20px; text-align: center; }
-        .member-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 40px; }
-        .member-card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-        .member-card h3 { margin: 15px 0 5px; color: var(--dark); }
-        .member-card p { color: var(--primary); font-size: 0.9rem; font-weight: bold; margin: 0; }
+        .logo-container { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .logo-img { height: 40px; width: auto; }
+        .logo-text { font-weight: bold; color: var(--primary); font-size: 1.4rem; }
+        .nav-links { display: flex; gap: 12px; }
+        .nav-links a { text-decoration: none; color: var(--dark); font-size: 0.85rem; font-weight: 600; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+
+        header { text-align: center; padding: 40px 20px; background: white; border-bottom: 1px solid #eee; }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 25px; padding: 40px 5%; max-width: 1200px; margin: auto; }
+        .member-card { background: white; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #eef2f6; transition: transform 0.3s; }
+        .member-card:hover { transform: translateY(-5px); }
+        .pic-frame { width: 100px; height: 100px; background: #f1f5f9; border-radius: 50%; margin: 0 auto 15px; overflow: hidden; border: 3px solid var(--primary); }
+        .pic-frame img { width: 100%; height: 100%; object-fit: cover; }
+        h3 { margin: 10px 0 5px; font-size: 1rem; color: var(--dark); height: 2.4em; display: flex; align-items: center; justify-content: center; }
+        .designation { color: var(--primary); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+        .class-info { color: #64748b; font-size: 0.7rem; margin-top: 5px; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
+            .nav-links a { font-size: 0.7rem; text-align: center; }
+        }
     </style>
 </head>
 <body>
     <nav>
-        <a href="index.html" class="nav-logo">
-            <img src="images/logo.png" alt="Logo">
-            <span>DIGIFLASH</span>
+        <a href="index.html" class="logo-container">
+            <img src="images/logo.jpg" alt="DigiFlash Logo" class="logo-img">
+            <span class="logo-text">DIGIFLASH</span>
         </a>
         <div class="nav-links">
             <a href="index.html">Home</a>
@@ -31,17 +44,51 @@
             <a href="events.html">Events</a>
             <a href="gallery.html">Gallery</a>
             <a href="members.html">Members</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
         </div>
     </nav>
 
-    <div class="container">
-        <h1>Our Team</h1>
-        <div class="member-grid">
-            <div class="member-card">
-                <h3>Abdul Vahab</h3>
-                <p>Social Media Coordinator</p>
-            </div>
-            </div>
+    <header>
+        <h1>Digiflash Office Bearers List</h1>
+        <p>Academic Year: 2025-2026</p>
+    </header>
+
+    <div class="team-grid">
+        <div class="member-card" style="grid-column: 1 / -1; max-width: 300px; margin: 0 auto 30px; border-color: #e11d48;">
+            <div class="pic-frame" style="border-color: #e11d48;"><img src="images/coordinator.jpg"></div>
+            <h3>Faculty Name</h3>
+            <div class="designation" style="color: #e11d48;">Association Coordinator</div>
+            <div class="class-info">Dept. of Computer Science</div>
+        </div>
+        <div class="member-card"><div class="pic-frame"><img src="images/Arulnandhi.jpg"></div><h3>Arulnandhi.K</h3><div class="designation">President</div><div class="class-info">IV CSE-B</div></div>
+        <div class="member-card"><div class="pic-frame"><img src="images/Dharshan.jpg"></div><h3>Dharshan.B</h3><div class="designation">Secretary</div><div class="class-info">IV CSE-A</div></div>
+        <div class="member-card"><div class="pic-frame"><img src="images/Santhosh.jpg"></div><h3>Santhosh Gunal.K</h3><div class="designation">Treasurer</div><div class="class-info">III CSE-C</div></div>
+        <div class="member-card"><div class="pic-frame"><img src="images/Kabil.jpg"></div><h3>Kabil.K</h3><div class="designation">Vice-President</div><div class="class-info">III CSE-A</div></div>
+        <div class="member-card"><div class="pic-frame"><img src="images/Deepsikashree.jpg"></div><h3>Deepsikashree.R</h3><div class="designation">Joint Secretary</div><div class="class-info">III CSE-B</div></div>
+        <div class="member-card"><div class="pic-frame"><img src="images/Samyuktha.jpg"></div><h3>Samyuktha.S</h3><div class="designation">Chief Editor & Head of Digitimes</div><div class="class-info">III CSE-B</div></div>
+        <div class="member-card"><div class="pic-frame"><img src="images/Sowmiya.jpg"></div><h3>Sowmiya.M</h3><div class="designation">Digitimes Incharge</div><div class="class-info">III CSE-B</div></div>
+        <div class="member-card"><div class="pic-frame"><img src="images/Kannan.jpg"></div><h3>Kannan.K</h3><div class="designation">Digitimes Incharge</div><div class="class-info">III CSE-C</div></div>
+        <div class="member-card"><div class="pic-frame"><img src="images/Santharam.jpg"></div><h3>Santharam.S</h3><div class="designation">Byte Bulletin Incharge</div><div class="class-info">III CSE-C</div></div>
+        <div class="member-card"><div class="pic-frame"><img src="images/Godwin.jpg"></div><h3>Godwin Jacob.J</h3><div class="designation">Senior Executive Member</div><div class="class-info">IV CSE-B</div></div>
+        <div class="member-card"><div class="pic-frame"><img src="images/PavithraS.jpg"></div><h3>Pavithra.S</h3><div class="designation">Event Coordinator</div><div class="class-info">III CSE-A</div></div>
+        <div class="member-card"><div class="pic-frame"><img src="images/PavithraJ.jpg"></div><h3>Pavithra J</h3><div class="designation">Event Coordinator</div><div class="class-info">II CSE B</div></div>
+        <div class="member-card"><div class="pic-frame"><img src="images/Sanjay.jpg"></div><h3>Sanjay Kishore T</h3><div class="designation">Event Coordinator</div><div class="class-info">II CSE A</div></div>
+        <div class="member-card"><div class="pic-frame"><img src="images/Kavipriya.jpg"></div><h3>Kavipriya A</h3><div class="designation">Event Coordinator</div><div class="class-info">II CSE C</div></div>
+        <div class="member-card"><div class="pic-frame"><img src="images/Jena.jpg"></div><h3>Jena Shree T J</h3><div class="designation">Event Coordinator</div><div class="class-info">II CSE B</div></div>
+        <div class="member-card"><div class="pic-frame"><img src="images/Dinesh.jpg"></div><h3>Dinesh Babu S</h3><div class="designation">Event Coordinator</div><div class="class-info">II CSE C</div></div>
+        <div class="member-card"><div class="pic-frame"><img src="images/Gowshik.jpg"></div><h3>Gowshik Ram R</h3><div class="designation">Event Coordinator</div><div class="class-info">II CSE C</div></div>
+        <div class="member-card"><div class="pic-frame"><img src="images/Abhivashini.jpg"></div><h3>Abhivashini.S</h3><div class="designation">Digitimes Magazine Team</div><div class="class-info">IV CSE-B</div></div>
+        <div class="member-card"><div class="pic-frame"><img src="images/Raga.jpg"></div><h3>Raga Swetha D R</h3><div class="designation">Digitimes Magazine Team</div><div class="class-info">II CSE A</div></div>
+        <div class="member-card"><div class="pic-frame"><img src="images/Kamalika.jpg"></div><h3>Kamalika D</h3><div class="designation">Digitimes Magazine Team</div><div class="class-info">II CSE B</div></div>
+        <div class="member-card"><div class="pic-frame"><img src="images/Hari.jpg"></div><h3>HARI LOGESH B</h3><div class="designation">Digitimes Magazine Team</div><div class="class-info">II CSE B</div></div>
+        <div class="member-card"><div class="pic-frame"><img src="images/Vignesh.jpg"></div><h3>VIGNESH S</h3><div class="designation">Digitimes Magazine Team</div><div class="class-info">II CSE B</div></div>
+        <div class="member-card"><div class="pic-frame"><img src="images/Sriananth.jpg"></div><h3>Sriananth A</h3><div class="designation">Digitimes Magazine Team</div><div class="class-info">II CSE C</div></div>
+        <div class="member-card"><div class="pic-frame"><img src="images/Priyadharshini.jpg"></div><h3>Priyadharshini T</h3><div class="designation">Digitimes Magazine Team</div><div class="class-info">II CSE B</div></div>
+        <div class="member-card"><div class="pic-frame"><img src="images/Anderson.jpg"></div><h3>Anderson A</h3><div class="designation">Digitimes Magazine Team</div><div class="class-info">II CSE A</div></div>
+        <div class="member-card"><div class="pic-frame"><img src="images/Bhavinaya.jpg"></div><h3>Bhavinaya Shri.K.Y</h3><div class="designation">Documentation Incharge</div><div class="class-info">II CSE-A</div></div>
+        <div class="member-card"><div class="pic-frame"><img src="images/PavithraV.jpg"></div><h3>Pavithra V</h3><div class="designation">Website Coordinator</div><div class="class-info">II CSE-A</div></div>
+        <div class="member-card"><div class="pic-frame"><img src="images/Abdul.jpg"></div><h3>Abdul Vahab A</h3><div class="designation">Social Media Coordinator</div><div class="class-info">II CSE C</div></div>
     </div>
 </body>
 </html>
