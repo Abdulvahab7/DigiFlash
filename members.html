@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events | DigiFlash</title>
+    <title>Members | DigiFlash</title>
     <style>
         :root { --primary: #2563eb; --dark: #1e293b; --light: #f8fafc; }
         body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--light); }
@@ -12,10 +12,11 @@
         .nav-logo img { height: 45px; }
         .nav-logo span { font-weight: bold; color: var(--primary); font-size: 1.5rem; }
         .nav-links a { text-decoration: none; color: var(--dark); margin-left: 20px; font-weight: 500; }
-        .container { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
-        .event-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .event-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-        .event-info { padding: 20px; }
+        .container { max-width: 1000px; margin: 50px auto; padding: 0 20px; text-align: center; }
+        .member-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 40px; }
+        .member-card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .member-card h3 { margin: 15px 0 5px; color: var(--dark); }
+        .member-card p { color: var(--primary); font-size: 0.9rem; font-weight: bold; margin: 0; }
     </style>
 </head>
 <body>
@@ -34,14 +35,11 @@
     </nav>
 
     <div class="container">
-        <h1>Our Events</h1>
-        <div class="event-grid">
-            <div class="event-card">
-                <div class="event-info">
-                    <h3>Inauguration Ceremony</h3>
-                    <p>The grand opening of the DigiFlash club, marking the beginning of our digital journey.</p>
-                    <a href="gallery.html" style="color: var(--primary); text-decoration: none; font-weight: bold;">View Photos →</a>
-                </div>
+        <h1>Our Team</h1>
+        <div class="member-grid">
+            <div class="member-card">
+                <h3>Abdul Vahab</h3>
+                <p>Social Media Coordinator</p>
             </div>
             </div>
     </div>
