@@ -4,6 +4,33 @@
 <meta charset="UTF-8">
 <title>Events | DigiFlash</title>
 <link rel="stylesheet" href="css/style.css">
+<style>
+.section-title {
+  border-left: 5px solid var(--primary);
+  padding-left: 10px;
+  margin-top: 40px;
+}
+
+.badge {
+  display:inline-block;
+  padding:5px 10px;
+  font-size:0.75rem;
+  font-weight:bold;
+  border-radius:20px;
+  margin-top:10px;
+}
+
+.upcoming { background:#e0f2fe; color:#0369a1; }
+.active { background:#dcfce7; color:#166534; }
+.completed { background:#f1f5f9; color:#475569; }
+
+.event-card h3 { margin-bottom:5px; }
+
+.date-text {
+  font-size:0.85rem;
+  color:#64748b;
+}
+</style>
 </head>
 <body>
 
@@ -25,16 +52,41 @@
 
 <div class="container">
 
+<h2 class="section-title">Upcoming Events</h2>
+
+<div class="event-card">
+<h3>National Level Technical Symposium</h3>
+<p class="date-text">Date: To Be Announced</p>
+<span class="badge upcoming">Coming Soon</span>
+<p>Stay tuned for exciting technical competitions, workshops and guest lectures.</p>
+</div>
+
+
+<h2 class="section-title">Active / Recent Events</h2>
+
 <div class="event-card">
 <h3>Designing Intelligence (Effective Prompting for AI Systems)</h3>
-<p>Date: 28.02.2026</p>
+<p class="date-text">Held on: 28.02.2026</p>
+<span class="badge active">Feedback Open</span>
 <a href="https://forms.office.com/r/xMyRWFUSJn" class="btn">Submit Feedback</a>
 </div>
 
 <div class="event-card">
 <h3>Design Thinking & Innovation Design</h3>
-<p>Date: 28.02.2026</p>
+<p class="date-text">Held on: 28.02.2026</p>
+<span class="badge active">Feedback Open</span>
 <a href="https://forms.office.com/r/N7xA0JH1q9" class="btn">Submit Feedback</a>
+</div>
+
+
+<h2 class="section-title">Completed Events</h2>
+
+<div class="event-card">
+<h3>DigiFlash Inauguration Ceremony</h3>
+<p class="date-text">January 2026</p>
+<span class="badge completed">Completed</span>
+<p>The official launch of DigiFlash Association.</p>
+<a href="gallery.html" class="btn">View Photos</a>
 </div>
 
 </div>
