@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  // ======================
   // AUTO GALLERY
-  // ======================
   const inaugurationGrid = document.getElementById("inaugurationGrid");
   const eventsGrid = document.getElementById("eventsGrid");
 
