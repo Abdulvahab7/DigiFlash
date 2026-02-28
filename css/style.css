@@ -2,18 +2,15 @@
   --primary: #2563eb;
   --dark: #1e293b;
   --light: #f8fafc;
-  --accent: #16a34a;
-}
-
-* {
-  box-sizing: border-box;
+  --accent: #f59e0b;
 }
 
 body {
-  margin: 0;
   font-family: 'Segoe UI', sans-serif;
+  margin: 0;
   background: var(--light);
   color: var(--dark);
+  line-height: 1.6;
 }
 
 /* NAVIGATION */
@@ -24,6 +21,9 @@ nav {
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo-container {
@@ -40,19 +40,19 @@ nav {
 .logo-text {
   font-weight: bold;
   color: var(--primary);
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 }
 
 .nav-links {
   display: flex;
-  gap: 15px;
+  gap: 12px;
 }
 
 .nav-links a {
   text-decoration: none;
   color: var(--dark);
-  font-weight: 600;
   font-size: 0.85rem;
+  font-weight: 600;
 }
 
 .nav-links a:hover {
@@ -63,28 +63,41 @@ nav {
 .container {
   max-width: 1000px;
   margin: 40px auto;
-  padding: 20px;
+  padding: 0 20px;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(135deg,#2563eb,#1e40af);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin: 0;
 }
 
 /* CARDS */
 .card, .event-card {
   background: white;
-  padding: 25px;
+  padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
   margin-bottom: 20px;
 }
 
-/* BUTTONS */
+/* BUTTON */
 .btn {
   display: inline-block;
   background: var(--primary);
   color: white;
-  padding: 10px 20px;
+  padding: 12px 25px;
   border-radius: 6px;
   text-decoration: none;
-  margin-top: 10px;
   font-weight: 600;
+  margin-top: 15px;
 }
 
 .btn:hover {
@@ -94,14 +107,13 @@ nav {
 /* GALLERY */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+  gap: 20px;
 }
 
 .gallery-grid img {
   width: 100%;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
   transition: 0.3s;
 }
 
@@ -112,13 +124,15 @@ nav {
 /* RESPONSIVE */
 @media (max-width:768px){
   .nav-links {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 5px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:5px;
   }
-
   .nav-links a {
-    font-size: 0.7rem;
-    text-align: center;
+    font-size:0.7rem;
+    text-align:center;
+  }
+  .hero h1 {
+    font-size:2rem;
   }
 }
