@@ -2,8 +2,64 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DigiFlash | Home</title>
 <link rel="stylesheet" href="css/style.css">
+
+<style>
+.hero {
+  background: linear-gradient(135deg,#2563eb,#1e40af);
+  color:white;
+  padding:120px 20px;
+  text-align:center;
+}
+
+.hero h1 {
+  font-size:3rem;
+  margin-bottom:10px;
+}
+
+.hero p {
+  font-size:1.2rem;
+  opacity:0.9;
+}
+
+.hero-btn {
+  display:inline-block;
+  margin-top:25px;
+  background:white;
+  color:#2563eb;
+  padding:12px 25px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.hero-btn:hover {
+  background:#f1f5f9;
+}
+
+.features {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+  margin-top:-60px;
+}
+
+.feature-card {
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  text-align:center;
+  transition:0.3s;
+}
+
+.feature-card:hover {
+  transform:translateY(-5px);
+}
+</style>
+
 </head>
 <body>
 
@@ -12,6 +68,7 @@
 <img src="images/logo.jpg" class="logo-img">
 <span class="logo-text">DIGIFLASH</span>
 </a>
+
 <div class="nav-links">
 <a href="index.html">Home</a>
 <a href="updates.html">Updates</a>
@@ -23,20 +80,36 @@
 </div>
 </nav>
 
-<header class="hero">
+<section class="hero">
 <h1>Welcome to DigiFlash</h1>
 <p>Innovation • Technology • Community</p>
-</header>
+<a href="events.html" class="hero-btn">Explore Events</a>
+</section>
 
 <div class="container">
-<div class="card">
-<h2>Weekly Technical Quiz</h2>
+
+<div class="features">
+
+<div class="feature-card">
+<h3>Weekly Technical Quiz</h3>
+<p>Test your knowledge every week and earn recognition.</p>
 <a href="updates.html" class="btn">Take Quiz</a>
 </div>
-<div class="card">
-<h2>Our Members</h2>
-<a href="members.html" class="btn">View Team</a>
+
+<div class="feature-card">
+<h3>Workshops & Events</h3>
+<p>Hands-on sessions on AI, DevOps, Design Thinking and more.</p>
+<a href="events.html" class="btn">View Events</a>
 </div>
+
+<div class="feature-card">
+<h3>Our Team</h3>
+<p>Meet the 28 Office Bearers driving DigiFlash forward.</p>
+<a href="members.html" class="btn">Meet Members</a>
+</div>
+
+</div>
+
 </div>
 
 </body>
